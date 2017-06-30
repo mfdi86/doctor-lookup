@@ -41,17 +41,17 @@ gulp.task('bowerJS', function () {
 
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
 
-var lib = require('bower-files')({
-  "overrides":{
-    "bootstrap" : {
-      "main": [
-        "less/bootstrap.less",
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js"
-      ]
-    }
-  }
-});
+// var lib = require('bower-files')({
+//   "overrides":{
+//     "bootstrap" : {
+//       "main": [
+//         "less/bootstrap.less",
+//         "dist/css/bootstrap.css",
+//         "dist/js/bootstrap.js"
+//       ]
+//     }
+//   }
+// });
 
 gulp.task('bowerCSS', function () {
   return gulp.src(lib.ext('css').files)

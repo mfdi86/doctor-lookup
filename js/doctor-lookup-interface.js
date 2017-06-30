@@ -1,9 +1,23 @@
-var apiKey = require('./../.env').apiKey;
+var Doctor = require('./../js/doctor-lookup.js').doctorModule;
 
-$(document).ready(function(event){
-  $('#condition-btn').click(function(){
-    var condition = $('#condition').val();
+var displayDoctors = function(doctors) {
+  $('.show-doctors').text("Here are some doctors in your area: " doctors);
+}
+
+$(document).ready(function(){
+    var showDoctors = new Doctor();
+$('#condition-btn').click(function(){
+    var medicalIssue = $('#condition').val();
     $('#condition').val("");
-    $('.show-doctors').text("Your symptoms: " + condition + ".");
-  });
-});
+    showDoctors.getDoctor(medicalIssue);
+
+  //   $('.show-doctors').text("Your symptoms: " + condition + ".");
+  //   $.get()
+  //   .then(function(result) {
+  //     console.log(result);
+  //   })
+  //  .fail(function(error){
+  //     console.log("fail");
+    }); //fail function
+  }); //click function
+}); //document ready function
