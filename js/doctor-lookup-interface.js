@@ -1,23 +1,18 @@
 var Doctor = require('./../js/doctor-lookup.js').doctorModule;
-
 var displayDoctors = function(doctors) {
-  $('.show-doctors').text("Here are some doctors in your area: " doctors);
+  doctors.forEach(function(doctors)  {
+    $('#doc-list').append('<li>' + doctors + '</li>');
+  });
 }
 
-$(document).ready(function(){
-    var showDoctors = new Doctor();
-$('#condition-btn').click(function(){
-    var medicalIssue = $('#condition').val();
-    $('#condition').val("");
-    showDoctors.getDoctor(medicalIssue);
+$(document).ready(function() {
+  var doctors = new Doctor();
+  console.log($('#condition-btn'));
+  $('#condition-btn').submit( () => {
+      var medicalIssue = $('#condition').val();
+      $('#condition').val("");
+      doctors.getDoctor(displayDoctors);
 
-  //   $('.show-doctors').text("Your symptoms: " + condition + ".");
-  //   $.get()
-  //   .then(function(result) {
-  //     console.log(result);
-  //   })
-  //  .fail(function(error){
-  //     console.log("fail");
-    }); //fail function
-  }); //click function
-}); //document ready function
+        console.log("poop");
+    });
+});
