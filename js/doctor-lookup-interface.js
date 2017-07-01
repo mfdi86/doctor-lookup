@@ -12,7 +12,5 @@ $(document).ready(function() {
       var medicalIssue = $('#condition').val();
       $('#condition').val("");
       doctors.getDoctor(displayDoctors);
-
-        console.log("poop");
     });
 });
