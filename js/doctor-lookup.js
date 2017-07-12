@@ -2,7 +2,7 @@ var apiKey = require('./../.env').apiKey;
 
 //declares Doctors module
 Doctors = function(){
-}
+};
 
 //receiving medicalIssue and displayDoctors
 Doctors.prototype.getDoctor = function(medicalIssue, displayDoctors) {
@@ -12,6 +12,6 @@ Doctors.prototype.getDoctor = function(medicalIssue, displayDoctors) {
   }).fail(function(error) {
     console.log("Not working");
   });
-}
+};
 
 exports.doctorModule = Doctors;
